@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open router tab Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <main>
+    <div class="brand-mark">OR</div>
+    <p class="eyebrow">OPENROUTER / SETTINGS</p>
+    <h1>Connect your profile</h1>
+    <p class="intro">Your API management key is stored only in the extension's local storage and used for OpenRouter requests and account activity.</p>
+    <form id="settings-form">
+      <label for="api-key">API management key</label>
+      <input id="api-key" type="password" autocomplete="off" placeholder="sk-or-v1-...">
+      <p class="hint">Create a key in <a href="https://openrouter.ai/keys" target="_blank" rel="noreferrer">OpenRouter Keys</a>.</p>
+      <button type="submit">Save settings</button>
+      <p id="saved" role="status"></p>
+    </form>
+  </main>
+  <script type="module" src="options/settings.js"></script>
+</body>
+</html>

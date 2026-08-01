@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open router tab</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <!-- <p class="eyebrow">OPENROUTER</p> -->
+        <h1>OPEN ROUTER TAB</h1>
+      </div>
+      <button class="icon-button" id="refresh" aria-label="Refresh data" title="Refresh">↻</button>
+    </header>
+
+    <section class="profile-card" id="dashboard-view">
+      <div class="balance-row">
+        <div>
+          <span class="label"><span class="status-dot" title="Connected"></span> Available balance</span>
+          <strong id="balance">—</strong>
+        </div>
+        <a class="site-link" href="https://openrouter.ai/activity" target="_blank" rel="noreferrer">Open activity <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="usage-section" id="usage-view">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">USAGE</p>
+          <h2>Top models by spend</h2>
+        </div>
+        <strong id="total-usage">—</strong>
+      </div>
+      <div id="model-list" class="model-list"></div>
+    </section>
+
+    <section class="settings-panel" id="settings-view" hidden>
+      <div class="settings-heading">
+        <div>
+          <p class="eyebrow">SETTINGS</p>
+          <h2>Connect your profile</h2>
+        </div>
+        <button class="close-button" id="close-settings" aria-label="Close settings">×</button>
+      </div>
+      <form id="settings-form">
+        <label for="api-key">API management key</label>
+        <input id="api-key" type="password" autocomplete="off" placeholder="sk-or-v1-...">
+        <p class="settings-hint">The key is stored locally in this extension.</p>
+        <button class="save-button" type="submit">Save settings</button>
+        <p id="saved" role="status"></p>
+      </form>
+    </section>
+
+    <div id="message" class="message" role="status"></div>
+    <footer>
+      <button class="settings-link" id="settings">API management key settings</button>
+      <div class="footer-controls">
+        <label for="model-limit">Models</label>
+        <select id="model-limit" aria-label="Number of models to show">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="30">30</option>
+          <option value="100">100</option>
+        </select>
+        <span id="updated">Data not loaded yet</span>
+      </div>
+    </footer>
+    <a class="github-link" href="https://github.com/denistol/openrouter-tab" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+  </main>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
