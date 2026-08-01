@@ -1,4 +1,4 @@
-# Open router tab
+# OpenRouter tab
 
 <p align="center">
   <img src="icons/icon-128.png" alt="Open router tab icon" width="128" height="128">
