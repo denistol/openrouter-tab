@@ -12,24 +12,7 @@ Works in **Chrome** and **Firefox** (desktop 140+, Android 142+) from a single M
   <img src="screenshot.png" alt="Open router tab popup showing balance and top models by spend" width="420">
 </p>
 
-## Install
-
-### Chrome / Chromium / Edge
-
-1. Open `chrome://extensions` (or `edge://extensions`).
-2. Enable **Developer mode**.
-3. Click **Load unpacked**.
-4. Select this project folder (the one that contains `manifest.json`).
-
-### Firefox
-
-1. Open `about:debugging#/runtime/this-firefox`.
-2. Click **Load Temporary Add-on…**.
-3. Choose `manifest.json` in this project folder.
-
-> Temporary add-ons in Firefox are removed when the browser restarts. For a persistent install, package and sign via [addons.mozilla.org](https://addons.mozilla.org/) or use `web-ext`.
-
-## Setup
+## Usage
 
 1. Open the extension popup or the options page.
 2. Paste your OpenRouter **API management key** (`sk-or-v1-...`).
