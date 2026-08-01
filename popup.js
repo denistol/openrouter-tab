@@ -27,14 +27,33 @@ function renderModels(models) {
   ));
   const safeValues = values.length ? values : [{ model: EMPTY_MODEL_LABEL, value: 0 }];
   const max = Math.max(...safeValues.map(({ value }) => Number(value)), BAR_FALLBACK_MAX);
+  const list = $("#model-list");
+  list.replaceChildren();
 
-  $("#model-list").innerHTML = safeValues.map(({ model, value }) => `
-    <div class="model-row">
-      <span class="model-name" title="${model}">${displayModelName(model)}</span>
-      <span class="model-cost">${formatMoney(value)}</span>
-      <div class="bar-track"><div class="bar-fill" style="width: ${Math.max(BAR_MIN_PERCENT, Number(value) / max * 100)}%"></div></div>
-    </div>
-  `).join("");
+  for (const { model, value } of safeValues) {
+    const row = document.createElement("div");
+    row.className = "model-row";
+
+    const name = document.createElement("span");
+    name.className = "model-name";
+    name.title = model;
+    name.textContent = displayModelName(model);
+
+    const cost = document.createElement("span");
+    cost.className = "model-cost";
+    cost.textContent = formatMoney(value);
+
+    const track = document.createElement("div");
+    track.className = "bar-track";
+
+    const fill = document.createElement("div");
+    fill.className = "bar-fill";
+    fill.style.width = `${Math.max(BAR_MIN_PERCENT, Number(value) / max * 100)}%`;
+
+    track.append(fill);
+    row.append(name, cost, track);
+    list.append(row);
+  }
 }
 
 async function showSettings() {

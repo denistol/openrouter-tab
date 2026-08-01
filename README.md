@@ -6,7 +6,11 @@
 
 Browser extension for a quick view of your OpenRouter profile, balance, and model usage.
 
-Works in **Chrome** and **Firefox** (128+) from a single Manifest V3 package.
+Works in **Chrome** and **Firefox** (desktop 140+, Android 142+) from a single Manifest V3 package.
+
+<p align="center">
+  <img src="screenshot.png" alt="Open router tab popup showing balance and top models by spend" width="420">
+</p>
 
 ## Install
 
